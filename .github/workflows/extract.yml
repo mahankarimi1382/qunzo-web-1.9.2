@@ -8,12 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      # دیگر نیازی به تعریف permissions جداگانه نیست چون از PAT استفاده می‌کنیم
 
     steps:
-      - name: Checkout code
+      - name: Checkout code with PAT
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.PAT_TOKEN }}   # ← استفاده از توکن شخصی
 
       - name: Download main.zip from Release
         run: |
@@ -29,7 +31,6 @@ jobs:
           echo "📦 در حال اکسترکت..."
           unzip -o main.zip
           
-          # اگر محتویات داخل پوشه main بود، به ریشه منتقل کن
           if [ -d "main" ]; then
             echo "📂 انتقال از پوشه main به ریشه..."
             mv main/* . 2>/dev/null || true
@@ -47,5 +48,6 @@ jobs:
           commit_user_name: "github-actions[bot]"
           commit_user_email: "github-actions[bot]@users.noreply.github.com"
           push_options: '--force-with-lease'
-          # ✅ مهم ترین خط: این گزینه باعث می‌شود فایل‌های داخل .gitignore (مثل vendor) هم اضافه شوند
           add_options: '-f'
+          # استفاده از توکن شخصی برای commit و push
+          github_token: ${{ secrets.PAT_TOKEN }}
