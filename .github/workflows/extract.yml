@@ -8,14 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      # دیگر نیازی به تعریف permissions جداگانه نیست چون از PAT استفاده می‌کنیم
 
     steps:
       - name: Checkout code with PAT
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.PAT_TOKEN }}   # ← استفاده از توکن شخصی
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Download main.zip from Release
         run: |
@@ -41,13 +40,21 @@ jobs:
           rm main.zip
           echo "✅ اکسترکت کامل شد"
 
-      - name: Commit and Push (Force add ignored files like vendor)
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Extract full source including vendor [skip ci]"
-          commit_user_name: "github-actions[bot]"
-          commit_user_email: "github-actions[bot]@users.noreply.github.com"
-          push_options: '--force-with-lease'
-          add_options: '-f'
-          # استفاده از توکن شخصی برای commit و push
-          github_token: ${{ secrets.PAT_TOKEN }}
+      - name: Force add all files (including vendor) and push
+        run: |
+          # تنظیم هویت برای commit
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # اضافه کردن همه فایل‌ها (حتی نادیده‌گرفته‌شده‌ها) به Stage
+          git add -f .
+          
+          # اگر تغییری وجود داشت، commit کن، در غیر این صورت پیام بده
+          if git diff --staged --quiet; then
+            echo "⚠️ هیچ تغییر جدیدی برای commit وجود ندارد."
+          else
+            git commit -m "Extract full source including vendor [skip ci]"
+            # Push با force-lease برای جلوگیری از خطای واگرایی
+            git push --force-with-lease origin main
+            echo "✅ Commit و Push با موفقیت انجام شد."
+          fi
