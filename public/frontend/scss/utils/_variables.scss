@@ -1,0 +1,61 @@
+
+// Common Color
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$placeholder: hsla(0, 0%, 0%, 0.5);
+$selection: hsl(0, 0%, 0%);
+
+// Body Color
+$body: #010C1A;
+
+// Heading Color
+$heading: #080808;
+
+// Theme Color
+$primary: #a6ef67;
+$deep-black: #1A1D1F;
+
+// Text Color
+$text-primary: #999999;
+
+// Border Color
+$border-primary: #eaeaea;
+
+// Others Color
+$yellow: #F79E1C;
+$warning: #FFA336;
+$success: #03A66D;
+$danger: #E94E5B;
+$green: #03A66D;
+
+// Font Weight Variables  
+$fw-normal: normal;
+$td-fw-thin: 100;
+$td-fw-elight: 200;
+$td-fw-light: 300;
+$td-fw-regular: 400;
+$td-fw-medium: 500;
+$td-fw-sbold: 600;
+$td-fw-bold: 700;
+$td-fw-ebold: 800;
+$td-fw-black: 900;
+
+// Font Size Variables  
+$td-fs-body: 16px;
+$td-fs-p: 16px;
+$td-fs-h1: 52px;
+$td-fs-h2: 42px;
+$td-fs-h3: 32px;
+$td-fs-h4: 24px;
+$td-fs-h5: 20px;
+$td-fs-h6: 16px;
+
+// Responsive Variables
+$x3l: 'only screen and (min-width: 1600px) and (max-width: 1800px)';
+$xxl: 'only screen and (min-width: 1400px) and (max-width: 1599px)';
+$xl: 'only screen and (min-width: 1200px) and (max-width: 1399px)';
+$lg: 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md: 'only screen and (min-width: 768px) and (max-width: 991px)';
+$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
+$xs: '(max-width: 575px)';
+$xxs: "(max-width: 480px)";

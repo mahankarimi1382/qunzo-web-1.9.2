@@ -1,0 +1,91 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  Header Styles
+/*----------------------------------------*/
+
+// Header transparent
+.header-transparent {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+// Active-sticky
+.active-sticky {
+  position: fixed !important;
+  top: 0;
+  z-index: 111;
+  inset-inline-end: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  animation: sticky 0.3s;
+  -webkit-animation: sticky 0.3s;
+  background-color: rgba($white, $alpha: 0.7) !important;
+  box-shadow: 0 2px 4px rgba(7, 37, 68, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+// Heder one styles
+.header-style-one {
+  border-bottom: 1px solid rgba($black, $alpha: 0.1);
+  padding: 10px 0;
+
+  @media #{$xs,$sm,$md} {
+    padding: 16px 0;
+  }
+
+  .header-btns-wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  .header-quick-actions {
+    gap: 16px;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    column-gap: 80px;
+
+    @media #{$lg} {
+      column-gap: 16px;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    justify-content: end;
+  }
+
+  .header-logo {
+    a {
+      display: block
+    }
+
+    img {
+      height: 30px;
+
+      @media #{$xs} {
+        height: 26px;
+      }
+
+      @media #{$xxs} {
+        height: 22px;
+      }
+    }
+  }
+
+  .header-inner {
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+  }
+}

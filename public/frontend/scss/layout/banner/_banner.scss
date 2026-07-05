@@ -1,0 +1,102 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  Banner one css
+/*----------------------------------------*/
+.banner-style-one {
+    // padding-top: 80px;
+    // padding-bottom: 80px;
+    z-index: 91;
+
+    // @media #{$xl} {
+    //     padding-top: 80px;
+    //     padding-bottom: 80px;
+    // }
+
+    // @media #{$lg} {
+    //     padding-top: 65px;
+    //     padding-bottom: 65px;
+    // }
+
+    // @media #{$md} {
+    //     padding-top: 65px;
+    //     padding-bottom: 65px;
+    // }
+
+    // @media #{$sm} {
+    //     padding-top: 55px;
+    //     padding-bottom: 55px;
+    // }
+
+    // @media #{$xs} {
+    //     padding-top: 50px;
+    //     padding-bottom: 50px;
+    // }
+
+    .banner-inner {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: 0 30px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 777px;
+        margin-top: 30px;
+    }
+
+    .banner-contents {
+        @media #{$xs,$sm,$md} {
+            text-align: center;
+
+            .banner-buttons {
+                justify-content: center;
+            }
+        }
+
+        .banner-title {
+            font-size: 60px;
+            margin-bottom: 20px;
+            line-height: 1.16;
+
+            @media #{$xxl} {
+                font-size: 46px;
+            }
+
+            @media #{$xl} {
+                font-size: 54px;
+            }
+
+            @media #{$lg} {
+                font-size: 42px;
+            }
+
+            @media #{$md} {
+                font-size: 36px;
+            }
+
+            @media #{$sm} {
+                font-size: 32px;
+            }
+
+            @media #{$xs} {
+                font-size: 30px;
+            }
+        }
+
+        .description {
+            max-width: 575px;
+            margin-bottom: 35px;
+            color: #777;
+            line-height: 30px;
+            font-size: 18px;
+        }
+    }
+
+    .banner-thumb {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}

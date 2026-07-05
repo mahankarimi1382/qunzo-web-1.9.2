@@ -1,0 +1,96 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/* Breadcrumb styles
+/*----------------------------------------*/
+.td-breadcrumb-area {
+  padding: 50px 0;
+  position: relative;
+  z-index: 11;
+
+  .breadcrumb-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center
+  }
+}
+
+.breadcrumb-contents {
+  .banner-title {
+    color: var(--td-white);
+    margin-bottom: 12px;
+    font-size: 40px;
+
+    @media #{$xs,$sm} {
+      font-size: 32px;
+    }
+    @media #{$xxs} {
+      font-size: 28px;
+    }
+  }
+
+  .description {
+    color: rgba($white, $alpha: 0.7);
+  }
+}
+
+.breadcrumb-menu {
+  ul {
+    @include inline-flex();
+    gap: 26px;
+    justify-content: center;
+
+    li {
+      list-style: none;
+      position: relative;
+      line-height: 1;
+
+      &:last-child {
+        span {
+          color: var(--td-white);
+        }
+      }
+
+      &:not(:last-child) {
+        &::before {
+          display: inline-block;
+          content: "\f105";
+          position: absolute;
+          top: 50%;
+          inset-inline-end: -18px;
+          font-size: 14px;
+          font-family: var(--td-ff-fontawesome);
+          color: rgba($white, $alpha: 0.5);
+          transform: translateY(-50%);
+        }
+      }
+
+      &.active {
+        span {
+          color: var(--td-primary);
+        }
+      }
+
+      span {
+        font-size: 15px;
+        text-transform: capitalize;
+        font-weight: 500;
+        color: rgba($white, $alpha: 0.7);
+
+        a {
+          font-weight: 500;
+
+          &:hover {
+            color: var(--td-white);
+          }
+        }
+      }
+    }
+  }
+}

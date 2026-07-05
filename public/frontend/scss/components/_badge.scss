@@ -1,0 +1,109 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* Badge styles
+/*----------------------------------------*/
+.td-badge {
+	@include inline-flex();
+	align-items: center;
+	justify-content: center;
+	padding: 7px 15px;
+	line-height: 1;
+	border-radius: 10px;
+	font-weight: 600;
+	font-size: 14px;
+	background: rgba(94, 167, 253, 0.2);
+	border-radius: 30px;
+	column-gap: 6px;
+
+	&.badge-success {
+		background: rgba($success, $alpha: 0.08);
+		color: rgba($success, $alpha: 1);
+	}
+
+	&.badge-warning {
+		background: rgba(255, 183, 3, 0.06);
+		color: #FFB703;
+	}
+
+	&.badge-danger {
+		background: rgba($danger, $alpha: 0.08);
+		color: rgba($danger, $alpha: 1);
+	}
+
+	&.badge-primary {
+		background-color: rgba($primary, $alpha: 0.10);
+		color: var(--td-primary);
+
+		@include light-theme {
+			background: rgba(59, 87, 231, 0.07);
+		}
+	}
+
+	// fill bage
+	&.fill-badge-success {
+		background-color: var(--td-green);
+		color: var(--td-white);
+	}
+
+	&.fill-badge-warning {
+		background: var(--td-warning);
+		color: var(--td-white);
+	}
+
+	&.fill-badge-danger {
+		background: var(--td-danger);
+		color: var(--td-white);
+	}
+
+	&.fill-badge-green {
+		background-color: var(--td-green);
+		color: var(--td-white);
+		;
+	}
+
+	&.fill-badge-primary {
+		background-color: var(--td-primary);
+		color: var(--td-white);
+	}
+
+	&.badge-outline-primary {
+		background: rgba(116, 69, 255, 0.04);
+		border: 1px solid rgba(116, 69, 255, 0.3);
+		border-radius: 10px;
+		font-weight: 600;
+		font-size: 14px;
+		color: #7445FF;
+	}
+
+	&.badge-outline-success {
+		background: rgba($success, $alpha: 0.04);
+		border: 1px solid rgba($success, $alpha: 0.3);
+		color: var(--td-success);
+	}
+
+	&.badge-outline-danger {
+		background: rgba($danger, $alpha: 0.04);
+		border: 1px solid rgba($danger, $alpha: 0.3);
+		color: var(--td-danger);
+	}
+
+	&.badge-outline-warning {
+		background: rgba($warning, $alpha: 0.04);
+		border: 1px solid rgba($warning, $alpha: 0.3);
+		color: var(--td-warning);
+	}
+}
+
+// Others badges
+.sell-badge {
+	display: inline-block;
+	background: rgba($danger-alt, $alpha: 0.1);
+	border-radius: 5px;
+	border: 1px solid rgba($danger-alt, $alpha: 0.4);
+	padding: 5px 10px 5px 10px;
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--td-white);
+	line-height: 1
+}

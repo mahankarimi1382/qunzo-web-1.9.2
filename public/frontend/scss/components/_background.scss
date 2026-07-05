@@ -1,0 +1,37 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  Background Css
+/*----------------------------------------*/
+
+.white-bg {
+  background-color: var(--td-white);
+}
+
+.black-bg {
+  background-color: var(--td-black);
+}
+
+.primary-bg {
+  background-color: var(--td-bg-primary);
+}
+
+.chinese-black-bg {
+  background-color: var(--td-chinese-black);
+}
+
+.kuwanomi-purple-bg {
+  background-color: var(--td-kuwanomi-purple);
+}
+
+.chaos-black-bg {
+  background-color: var(--td-chaos-black);
+}
+
+.liberty-blue-bg {
+  background-color: var(--td-liberty-blue);
+}
+
+.green-bg-16 {
+  background-color: #001B11;
+}

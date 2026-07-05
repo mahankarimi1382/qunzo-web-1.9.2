@@ -1,0 +1,508 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  Payment styles
+/*----------------------------------------*/
+.payment-card-header {
+    margin-bottom: rem(24);
+    padding-bottom: rem(20);
+    border-bottom: 1px solid #eee;
+}
+
+.payment-card-wrapper {
+    width: 530px;
+    box-shadow: 0px 30px 60px rgba(3, 4, 5, 0.1);
+    background: #FFFFFF;
+    border: 1px solid #E7E7E7;
+    border-radius: 16px;
+    overflow: hidden;
+
+    >.payment-status-card {
+        border-radius: 0px;
+        border: 0 !important;
+        padding: 15px 30px;
+
+        @media #{$xs} {
+            padding: 15px 20px;
+        }
+    }
+}
+
+.payment-card-box {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 60px 0px;
+    margin: 0 15px;
+}
+
+.merchant-info-details {
+    display: flex;
+    align-items: center;
+    gap: 14px 14px;
+
+    @media #{$xxs} {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.merchant-info-logo {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    background: rgba(116, 69, 255, 0.1);
+}
+
+.payment-card {
+    overflow: hidden;
+    padding: 30px 30px 35px;
+
+    @media #{$xs} {
+        width: 100%;
+        padding: 25px 20px 25px;
+    }
+
+    .merchant-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        gap: 14px 20px;
+
+        @media #{$xxs} {
+            flex-direction: column;
+        }
+    }
+
+    .merchant-info-name {
+        font-weight: bold;
+        font-size: rem(16);
+        color: var(--td-heading);
+
+        @media #{$xs} {
+            font-size: rem(16);
+        }
+    }
+
+    .merchant-info-invoice {
+        font-size: 14px;
+        color: rgba(45, 45, 45, 0.6);
+    }
+
+    .merchant-info-amount {
+        font-size: rem(20);
+        font-weight: bold;
+        color: var(--td-heading);
+    }
+
+    .account-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .account-info-label {
+        margin-bottom: rem(6);
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+
+        .required {
+            color: #DC3C22;
+        }
+    }
+
+    .account-info-input-group {
+        .account-info-input {
+            color: rgba(34, 34, 34, 0.6);
+            border: 2px solid rgba(45, 45, 45, 0.16);
+            border-radius: 16px;
+
+            &:focus {
+                border-color: var(--td-primary);
+            }
+        }
+
+        select.form-select {
+            color: rgba(34, 34, 34, 0.6);
+            border: 2px solid rgba(45, 45, 45, 0.16);
+            border-radius: 16px;
+            height: 50px;
+            padding: 0 16px;
+            font-size: 14px;
+
+            &:focus {
+                border-color: var(--td-primary);
+                box-shadow: none;
+            }
+        }
+    }
+
+    .account-info-help-text {
+        font-size: 14px;
+        margin-bottom: rem(5);
+    }
+
+    .account-info-terms {
+        font-size: 14px;
+    }
+
+    .payment-card-footer {
+        padding: 0;
+        margin-top: rem(40);
+    }
+
+    .currency {
+        display: flex;
+        width: rem(68);
+        height: rem(34);
+        padding: rem(10);
+        justify-content: center;
+        align-items: center;
+        gap: rem(10);
+        border-radius: rem(4);
+        background: #EEE;
+        color: #222;
+        text-align: center;
+        font-size: rem(16);
+        font-weight: 700;
+    }
+
+    .payment-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: rem(20);
+
+        .merchant-info {
+            display: flex;
+            align-items: center;
+            gap: rem(10);
+
+            .icon {
+                img {
+                    width: rem(40);
+                }
+            }
+
+            .details {
+                .merchant-name {
+                    font-size: rem(16);
+                    font-weight: bold;
+                }
+
+                .invoice {
+                    font-size: 14px;
+
+                }
+            }
+        }
+
+        .amount {
+            font-size: rem(24);
+            font-weight: bold;
+            color: #333;
+        }
+    }
+
+    .otp-section {
+        margin-bottom: rem(15);
+
+        label {
+            display: block;
+            margin-bottom: rem(5);
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: rem(10);
+            border: 1px solid #ddd;
+            border-radius: rem(5);
+            font-size: rem(16);
+
+            &:focus {
+                outline: none;
+                border-color: #ff7e5f;
+                box-shadow: 0 0 5px rgba(255, 126, 95, 0.5);
+            }
+        }
+    }
+
+    .otp-timer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: rem(2);
+
+        .time-remaining {
+
+            font-size: 14px;
+            font-weight: 500;
+
+        }
+
+        .description {
+
+            font-size: 14px;
+            font-weight: 500;
+
+            .resend-code {
+                color: var(--td-primary);
+            }
+        }
+    }
+
+}
+
+.payment-card-logo {
+    img {
+        height: 30px;
+    }
+}
+
+.payment-status-card {
+    display: flex;
+    gap: 12px 12px;
+    padding: 14px 14px;
+    border-radius: 16px;
+    background: #ddd;
+    align-items: center;
+    transition: all 0.3s ease;
+
+    .thumb {
+        flex: 0 0 auto;
+        width: rem(40);
+        height: rem(40);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #2d2d35;
+        font-size: rem(20);
+        color: #f39c12;
+        border-radius: 20px 35px 15px 20px;
+
+        img {
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    .contents {
+        .title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            color: var(--td-heading);
+
+            a {
+                &:hover {
+                    color: var(--td-primary);
+                }
+            }
+        }
+
+        .message {
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+            color: var(--td-heading);
+            line-height: 1.65;
+        }
+    }
+
+    &.success {
+        background: rgba(39, 174, 96, 0.12);
+        border: 1px solid rgba(39, 174, 96, 0.3);
+    }
+
+    &.danger {
+        background: rgba(228, 84, 75, 0.12);
+        border: 1px solid rgba(228, 84, 75, 0.3);
+    }
+
+    &.warning {
+        background: rgba(255, 181, 71, 0.12);
+        border: 1px solid rgba(255, 181, 71, 0.3);
+    }
+
+    &.info {
+        background: rgba(65, 177, 252, 0.1);
+        border: 1px solid #41B1FC;
+    }
+}
+
+.payment-status-wrapper {
+
+    .icon-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .status-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .message-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 16px;
+    }
+
+    .message-text {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .info-text {
+        font-size: 14px;
+    }
+}
+
+// Payment option
+.select-wrapper {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 26px;
+
+    @media #{$xxs} {
+        flex-direction: column;
+    }
+
+    .select-option {
+        flex: 1;
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: 0.2s ease;
+        border: 2px solid rgba(45, 45, 45, 0.1);
+        border-radius: 12px;
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .icon {
+            font-size: 18px;
+
+            img {
+                height: 30px;
+            }
+        }
+
+        .text {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .check {
+            font-size: 14px;
+            color: #7b61ff;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: 0.2s ease;
+        }
+    }
+
+    input[type="radio"]:checked+.select-option {
+        border-color: #7b61ff;
+        background: rgba(123, 97, 255, 0.06);
+        box-shadow: 4px 6px 30px rgba(0, 0, 0, 0.1);
+
+        .check {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+// Payment gateway 
+.gateway-section {
+    margin-top: 20px;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+
+    span {
+        color: red;
+    }
+}
+
+.gateway-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+    .gateway-card {
+        position: relative;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.25s ease;
+        background: #FFFFFF;
+        border: 1px solid rgba(45, 45, 45, 0.1);
+        border-radius: 6px;
+
+        img {
+            height: 22px;
+        }
+
+        .text {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .check {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.6);
+            transition: 0.2s ease;
+        }
+    }
+
+    input[type="radio"]:checked+.gateway-card.green {
+        background: #a7f36b;
+        border-color: #a7f36b;
+    }
+
+    input[type="radio"]:checked+.gateway-card {
+        border-color: var(--td-primary);
+
+        .check {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}

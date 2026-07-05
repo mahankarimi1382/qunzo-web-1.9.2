@@ -1,0 +1,300 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* Buttons styles
+/*----------------------------------------*/
+.btn-wrap {
+    @include flexbox();
+    align-items: center;
+    gap: 15px 15px;
+    flex-wrap: wrap;
+}
+
+.td-btn {
+    padding: 0 24px;
+    background: var(--td-primary);
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s ease-in-out;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    color: var(--td-white);
+    font-size: 16px;
+    font-weight: 500;
+    gap: 8px;
+    min-width: 140px;
+
+    .btn-icon {
+        display: flex;
+        align-items: center;
+
+        i {
+            transition: .3s;
+        }
+    }
+
+    &:focus {
+        color: var(--td-white);
+    }
+
+    &:hover {
+        background-color: var(--td-primary-alt);
+        color: var(--td-white);
+        transform: translate3d(0, -2px, 0);
+    }
+
+    // outline btn
+    &.primary-btn-outline {
+        border: 2px solid rgba(166, 239, 103, 0.4);
+        background-color: transparent;
+        color: var(--td-white);
+
+        @include light-theme {
+            color: var(--td-heading);
+            border-color: rgba($heading, $alpha: 0.2);
+        }
+
+        &:hover {
+            background-color: var(--td-heading);
+            color: var(--td-white);
+        }
+    }
+
+    &.outline-white-btn {
+        background: var(--td-white);
+        border: 1px solid #DBDBDB;
+        color: var(--td-heading);
+        gap: 8px;
+
+        span {
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &:hover {
+            background-color: var(--td-heading);
+            border-color: var(--td-heading);
+            color: var(--td-white);
+        }
+    }
+
+    &.outline-danger-btn {
+    background: rgba(220, 60, 34, 0.04);
+    border: 2px solid rgba(220, 60, 34, 0.6);
+    border-radius: 14px;
+    color: #DC3C22
+    }
+
+    &.outline-black-btn {
+        border: 1px solid rgba($heading, $alpha: 0.6);
+        color: rgba($heading, $alpha: 0.6);
+        background-color: transparent;
+    }
+
+    // Default btns
+    &.btn-primary {
+        background: var(--td-primary-alt);
+        color: var(--td-white);
+
+        span {
+            svg * {
+                width: 16px;
+                height: 16px;
+                stroke: var(--td-white);
+            }
+        }
+
+        &:hover {
+            background: var(--td-primary);
+        }
+    }
+
+    &.danger-btn {
+        background: var(--td-danger);
+        color: var(--td-white);
+
+        span {
+            svg * {
+                stroke: var(--td-white);
+            }
+        }
+    }
+
+    &.btn-white {
+        background-color: var(--td-white);
+        color: var(--td-heading);
+
+        &:hover {
+            background-color: var(--td-primary);
+            color: var(--td-white);
+        }
+    }
+
+    &.btn-gray {
+        background: #EEE;
+        border: 1px solid rgba(171, 178, 225, 0.3);
+        @include border-radius(8px);
+        color: var(--td-heading);
+    }
+
+    &.tertiary-btn {
+        background: #4CD080;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        color: var(--td-white);
+    }
+
+    &.secondary-btn {
+        background: #AA60C8;
+        color: var(--td-white);
+
+        &:hover {
+            color: var(--td-white);
+        }
+    }
+
+    // Has underline
+    &.has-underline {
+        background-color: transparent;
+        height: auto;
+        padding: 0;
+
+        .btn-text {
+            color: var(--td-heading);
+
+            &::after {
+                position: absolute;
+                content: "";
+                inset-inline-start: auto;
+                bottom: -2px;
+                background: currentColor;
+                width: 0;
+                height: 2px;
+                transition: 0.3s;
+                inset-inline-end: 0;
+            }
+        }
+
+        .btn-icon {
+            width: 22px;
+            height: 22px;
+            background-color: var(--td-primary);
+            @include inline-flex();
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+
+            svg * {
+                stroke: var(--td-white);
+            }
+        }
+
+        &:hover {
+            .btn-text {
+                &::after {
+                    width: 100%;
+                    inset-inline-start: 0;
+                    inset-inline-end: auto;
+                }
+            }
+        }
+    }
+
+    // Size Variation
+    &.btn-xs {
+        padding: 0 14px;
+        height: 30px;
+        font-size: 12px;
+        gap: 4px;
+
+        .btn-icon {
+            i {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+
+    &.btn-h-40 {
+        height: 40px;
+        padding: 0 15px;
+        font-size: 14px;
+        gap: 4px;
+    }
+
+    &.btn-h-36 {
+        height: 36px;
+        padding: 0 15px;
+        font-size: 14px;
+        gap: 4px;
+    }
+
+    &.btn-sm {
+        padding: 0 22px;
+        height: 44px;
+        gap: 6px;
+        font-size: 14px;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        @media #{$xs,$sm} {
+            padding: 0 12px;
+            height: 36px;
+            gap: 6px;
+            font-size: 14px;
+            gap: 2px;
+        }
+    }
+
+    &.btn-md {
+        padding: 0 25px;
+        font-size: var(--font-size-b3);
+        height: 50px;
+
+        @media #{$sm} {
+            padding: 0 15px;
+        }
+    }
+
+    &.btn-lg {
+        height: 70px;
+        padding: 0 35px;
+        font-size: 18px;
+
+        @media #{$sm} {
+            padding: 0 17px;
+        }
+    }
+
+    &.btn-xl {
+        padding: 0 45px;
+        font-size: 20px;
+        height: 75px;
+
+        @media #{$sm} {
+            padding: 0 20px;
+            font-size: 16px;
+            height: 55px;
+        }
+    }
+
+    &.btn-xxl {
+        padding: 0 60px;
+        font-size: 22px;
+        height: 100px;
+        line-height: 100px;
+
+        @media #{$sm} {
+            padding: 0 20px;
+            font-size: 18px;
+            height: 70px;
+        }
+    }
+}

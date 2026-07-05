@@ -1,0 +1,61 @@
+@use '../utils/variable' as *;
+
+:root {
+  // font family declaration
+  --td-ff-body: "Plus Jakarta Sans", sans-serif;
+  --td-ff-fontawesome: "Font Awesome 6 Pro";
+
+  // color declaration
+
+  // Common Color
+  --td-white: #ffffff;
+  --td-black: #000000;
+  --td-placeholder: hsla(0, 0%, 0%, 0.5);
+  --td-selection: hsl(0, 0%, 0%);
+
+  // Body Color
+  --td-body: #010C1A;
+
+  // Heading Color
+  --td-heading: #2D2D2D;
+
+  // Theme Color
+  --td-primary: #7445FF;
+  --td-primary-alt: #6033E0;
+
+  // Text Color
+  --td-text-primary: #818181;
+
+  // Border Color
+  --td-border-primary: #eaeaea;
+
+  // Others Color
+  --td-yellow: #f2c94c;
+  --td-warning: #FFA336;
+  --td-success: #14AE6F;
+  --td-danger: #eb4e5c;
+  --td-danger-alt: #DC3C22;
+  --td-info: #41B1FC;
+
+  //font weight declaration
+  --td-fw-normal: normal;
+  --td-fw-thin: 100;
+  --td-fw-elight: 200;
+  --td-fw-light: 300;
+  --td-fw-regular: 400;
+  --td-fw-medium: 500;
+  --td-fw-sbold: 600;
+  --td-fw-bold: 700;
+  --td-fw-ebold: 800;
+  --td-fw-black: 900;
+
+  // font size declaration
+  --td-fs-body: 16px;
+  --td-fs-p: 16px;
+  --td-fs-h1: 52px;
+  --td-fs-h2: 42px;
+  --td-fs-h3: 32px;
+  --td-fs-h4: 24px;
+  --td-fs-h5: 20px;
+  --td-fs-h6: 16px;
+}

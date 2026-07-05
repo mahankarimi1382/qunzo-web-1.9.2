@@ -1,0 +1,31 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  Default Spacing
+/*----------------------------------------*/
+
+.section_space {
+    padding-block-start: clamp(3.75rem, 5vw + 1rem, 5rem);
+    /* ~60px to 80px */
+    padding-block-end: clamp(3.75rem, 5vw + 1rem, 5rem);
+}
+
+.section_space-top {
+    padding-block-start: clamp(3.75rem, 5vw + 1rem, 5rem);
+}
+
+.section_space-bottom {
+    padding-block-end: clamp(3.75rem, 5vw + 1rem, 5rem);
+}
+
+.section_title_space {
+    margin-bottom: 50px;
+
+    @media #{$md} {
+        margin-bottom: 44px;
+    }
+
+    @media #{$xs,$sm} {
+        margin-bottom: 38px;
+    }
+}

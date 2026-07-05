@@ -1,0 +1,64 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/* Footer copyright style
+/*----------------------------------------*/
+.footer-copyright {
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 10px;
+    border-top: 1px solid rgba($heading, $alpha: 0.1);
+    padding: 20px 0;
+
+    @media #{$xs,$sm} {
+        justify-content: center;
+    }
+}
+
+.copyright-link {
+    ul {
+        @include flexbox();
+        gap: 10px;
+        flex-wrap: wrap;
+
+        li {
+            list-style: none;
+            font-size: 14px;
+            font-weight: 500;
+
+            a {
+                &:hover {
+                    color: var(--td-primary);
+                }
+            }
+        }
+    }
+}
+
+.copyright-text,
+.footer-terms {
+    p {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba($heading, $alpha: 0.7);
+
+    a {
+
+        &:hover {
+            color: var(--td-primary);
+        }
+    }
+}
+
+.footer-terms {
+    display: flex;
+    gap: 4px 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}

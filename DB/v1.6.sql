@@ -1,0 +1,1 @@
+UPDATE transactions SET type = 'Gift Code' WHERE type = 'Gift Card';

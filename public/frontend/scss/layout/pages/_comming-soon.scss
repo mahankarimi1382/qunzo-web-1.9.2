@@ -1,0 +1,152 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/* Comming Soon Styles
+/*----------------------------------------*/
+
+.comming-soon-section {
+    display: flex;
+    padding: 100px 0;
+    min-height: 100vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(0deg, rgba($primary, $alpha: 0.2) 0%, rgba(83, 85, 223, 0) 100%);
+
+    @media #{$xs,$sm} {
+        padding: 50px 0;
+    }
+
+    @media #{$md} {
+        padding: 60px 0;
+    }
+
+    .site-logo {
+        margin-bottom: 35px;
+
+        .site-link {
+            display: block;
+
+            img {
+                height: 38px;
+            }
+        }
+    }
+
+    .intro {
+        .title-text {
+            font-size: 65px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+
+            @media #{$xl} {
+                font-size: 55px;
+            }
+
+            @media #{$lg,$md} {
+                font-size: 46px;
+            }
+
+            @media #{$xs,$sm} {
+                font-size: 34px;
+                margin-bottom: 20px;
+            }
+
+            @media #{$xxs} {
+                font-size: 28px;
+                
+            }
+        }
+    }
+
+    .shape-1 {
+        top: -60px;
+        inset-inline-start: -84px;
+
+        img {
+            animation: spin 8s infinite linear;
+        }
+    }
+
+    .shape-2 {
+        inset-inline-start: 211px;
+        bottom: 188px;
+        max-width: 22px;
+    }
+
+    .shape-3 {
+        top: 266px;
+        inset-inline-end: 176px;
+    }
+
+    .shape-4 {
+        inset-inline-end: 96px;
+        bottom: 130px;
+        max-width: 140px;
+    }
+
+    .shape-5 {
+        top: -100px;
+        inset-inline-end: -120px;
+        max-width: 430px;
+
+        img {
+            opacity: 0.4;
+            filter: blur(300px);
+        }
+    }
+    .btn-wrapper {
+        margin-top: 30px;
+    }
+}
+
+.shapes-wrap {
+    .shape-item {
+        z-index: -1;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 30px 30px;
+    }
+}
+
+
+.subscribe-form {
+    margin: auto;
+    max-width: 610px;
+
+    .form-label {
+        top: 50%;
+        inset-inline-start: 30px;
+        margin: 0;
+        position: absolute;
+        transform: translateY(-50%);
+    }
+
+    .form-control {
+        padding: 0;
+        height: 65px;
+        border: none;
+        border-radius: 115px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-inline-start: 60px;
+        padding-inline-end: 180px;
+        background-color: var(--td-white);
+        border: 1px solid rgba(15, 14, 14, 0.1);
+    }
+
+    .td-btn {
+        top: 50%;
+        inset-inline-end: 10px;
+        position: absolute;
+        transform: translateY(-50%);
+        border-radius: 120px;
+    }
+}
+
+.form-group {
+    position: relative;
+    margin-top: 30px
+}
