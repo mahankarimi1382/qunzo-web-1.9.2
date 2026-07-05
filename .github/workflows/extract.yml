@@ -29,6 +29,7 @@ jobs:
           echo "📦 در حال اکسترکت..."
           unzip -o main.zip
           
+          # اگر محتویات داخل پوشه main بود، به ریشه منتقل کن
           if [ -d "main" ]; then
             echo "📂 انتقال از پوشه main به ریشه..."
             mv main/* . 2>/dev/null || true
@@ -39,10 +40,12 @@ jobs:
           rm main.zip
           echo "✅ اکسترکت کامل شد"
 
-      - name: Commit and Push
+      - name: Commit and Push (Force add ignored files like vendor)
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Extract main.zip to root [skip ci]"
+          commit_message: "Extract full source including vendor [skip ci]"
           commit_user_name: "github-actions[bot]"
           commit_user_email: "github-actions[bot]@users.noreply.github.com"
           push_options: '--force-with-lease'
+          # ✅ مهم ترین خط: این گزینه باعث می‌شود فایل‌های داخل .gitignore (مثل vendor) هم اضافه شوند
+          add_options: '-f'
